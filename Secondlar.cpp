@@ -1,4 +1,4 @@
-#include<iostream>
+/*#include<iostream>
 #include<vector>
 #include<climits>
 using namespace std;
@@ -25,4 +25,47 @@ int main(){
     cout << Secondlar(arr);
 
     return 0;
+}*/
+
+
+
+
+#include <iostream>
+using namespace std;
+int main(){
+int arr[]={6,8,3,9,15};
+int n=sizeof (arr)/sizeof(arr);
+int largest = INT_MIN;
+int secondlargest=INT_MIN;
+
+int smallest=INT_MIN;
+int secondsmallest=INT_MIN;
+
+
+
+//second largest
+
+for (int i=0;i<n;i++){
+    if (arr[i]>largest){
+    secondlargest=largest;
+    largest = arr[i];
+
+    }
+    else if(arr[i]> secondlargest && arr[i] != largest){
+        secondlargest =arr[i];
+    }
+
+    //second smallest
+    if(arr[i]<smallest){
+        secondsmallest= smallest;
+        smallest= arr[i];
+
+    }
+    else if (arr[i]<secondsmallest && arr[i] !=smallest){
+        secondsmallest=arr[i];
+    }
+}
+cout<<"Second largest =" <<  secondlargest << endl;
+cout<<"Second smallest=" <<  secondsmallest << endl;
+return 0;
 }
